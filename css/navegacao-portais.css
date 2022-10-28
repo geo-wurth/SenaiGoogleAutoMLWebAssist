@@ -1,0 +1,204 @@
+@charset "UTF-8";
+/* CSS Document */
+/* * {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+} */
+
+#navegacao {
+    text-decoration: none;
+    list-style: none;
+    font-size: 16px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+
+#navegacao a {
+    -webkit-transition: all ease .25s;
+    -moz-transition: all ease .25s;
+    transition: all ease .25s;
+}
+
+@media(max-width:320px) {
+
+    #navegacao {
+        letter-spacing: -.8px !important;
+    }
+}
+
+@media(max-width: 767px) {
+    #navegacao {
+        letter-spacing: .8px
+    }
+
+    #navegacao>div {
+        padding-left: 0;
+        padding-right: 0
+    }
+
+    #navegacao.navegacao-portais {
+        height: 25px !important;
+    }
+
+    #navegacao.navegacao-portais .container-portais {
+        width: 100%
+    }
+
+    #navegacao.navegacao-portais ul li {
+        margin: 0 5px !important;
+        font-size: 12px !important;
+    }
+
+    #navegacao.navegacao-portais .top-sociais ul .fa {
+        padding: 4px 0 !important;
+        width: 28px !important;
+    }
+}
+
+/*NAVEGAÇÂO*/
+#navegacao {
+    display: inline-block
+}
+
+.navegacao-portais {
+    width: 100%;
+    height: 30px;
+    position: fixed;
+    padding: 0;
+    top: 0;
+    z-index: 9999;
+    background: #2884b2;
+}
+
+.navegacao-portais .container-portais {
+    display: block;
+    width: auto;
+    padding: 0;
+    margin: 0 auto;
+}
+
+@media(min-width: 991px) {
+    .navegacao-portais .container-portais {
+        width: 950px;
+    }
+}
+
+@media(min-width: 1200px) {
+    .navegacao-portais .container-portais {
+        width: 1120px;
+    }
+}
+
+.navegacao-portais .container-portais-fluid {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+}
+
+
+.navegacao-portais .top-sociais {
+    display: inline-block;
+    float: right;
+    margin: 0;
+}
+
+.navegacao-portais ul li {
+    display: inline-table;
+    margin: 0 10px;
+    font-size: 13px;
+    /* font-weight: bold; */
+    text-transform: uppercase;
+}
+
+.navegacao-portais ul li a {
+    color: #ffffff;
+    background: transparent;
+    /* font-weight: bold; */
+    text-decoration: none
+}
+
+.navegacao-portais ul li a:hover,
+.navegacao-portais ul li a:active,
+.navegacao-portais ul li a:focus {
+    color: #cccccc;
+    text-decoration: none;
+    background: transparent;
+}
+
+.navegacao-portais ul {
+    display: table;
+    float: right;
+    margin-top: 0;
+}
+
+.navegacao-portais ul li.fiesp a {
+    background-position: -8px 0
+}
+
+.navegacao-portais ul li.ciesp a {
+    background-position: -73px 0
+}
+
+.navegacao-portais ul li.sesi a {
+    background-position: -132px 0
+}
+
+.navegacao-portais ul li.senai a {
+    background-position: -183px 0
+}
+
+.navegacao-portais ul li.irs a {
+    background-position: -248px 0
+}
+
+
+.navegacao-portais .top-sociais ul .fa {
+    color: #FFFFFF;
+    border-left: 1px solid #ffffff;
+    padding: 7px 0;
+    width: 55px;
+    text-align: center;
+    text-decoration: none
+}
+
+.navegacao-portais .top-sociais ul .fa:hover {
+    text-decoration: none
+}
+
+/* .navegacao-portais .top-sociais ul .fa:last-child { border-right: 1px solid #ffffff } */
+
+.navegacao-portais .top-sociais ul .fa-facebook:hover {
+    background-color: #3B5998;
+}
+
+.navegacao-portais .top-sociais ul .fa-twitter:hover {
+    background-color: #5EA9DD;
+}
+
+.navegacao-portais .top-sociais ul .fa-youtube:hover {
+    background-color: #efefef;
+    color: #D22827
+}
+
+.navegacao-portais .top-sociais ul .fa-linkedin:hover {
+    background-color: #0177B5;
+}
+
+.navegacao-portais .top-sociais ul .fa-slideshare:hover {
+    background-color: #00A7A9;
+}
+
+.navegacao-portais .top-sociais ul .fa-flickr:hover {
+    background-color: #0063dc;
+    color: #fff
+}
+
+.navegacao-portais .top-sociais ul .fa-instagram:hover {
+    background: #e9375f;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}

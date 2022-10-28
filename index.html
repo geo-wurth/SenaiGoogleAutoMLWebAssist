@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Ícone do senai -->
+    <!-- <link rel="icon" href="https://mogidascruzes.sp.senai.br/favicon.ico"> -->
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+
+    <!-- Carregar bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+    <!-- Carregar Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- CSS e JS do Senai Mogi -->
+    <!-- <link rel="stylesheet" href="https://mogidascruzes.sp.senai.br/Content/navegacao-portais.css"> -->
+    <!-- <link rel="stylesheet" href="https://mogidascruzes.sp.senai.br/Content/custom.css"> -->
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/navegacao-portais.css">
+
+    <!-- <script src="https://mogidascruzes.sp.senai.br/Scripts/menu.js" type="text/javascript"></script> -->
+    <title>Senai - GCP</title>
+</head>
+
+<body>
+    <section id="navegacao" class="navegacao-portais">
+        <div class="container-portais">
+            <div class="top-sociais">
+                <ul>
+                    <li class="Fiesp"><a href="http://www.fiesp.com.br/" target="_blank" title="Fiesp">FIESP</a></li>
+                    <li class="ciesp"><a href="http://www.ciesp.com.br/" target="_blank" title="CIESP">CIESP</a></li>
+                    <li class="sesi"><a href="http://www.sesisp.org.br" target="_blank" title="SESI">SESI</a></li>
+                    <li class="senai"><a href="http://www.sp.senai.br" target="_blank" title="SENAI">SENAI</a></li>
+                    <li class="irs"><a href="http://www.fiesp.com.br/irs" title="IRS">IRS</a></li>
+                    <a target="_blank" href="https://www.facebook.com/senaisaopaulo"
+                        class="fa fa-brands fa-facebook"></a><a target="_blank" href="https://twitter.com/senaisaopaulo"
+                        class="fa fa-brands fa-twitter"></a><a target="_blank"
+                        href="https://www.youtube.com/user/SenaiSPaulo" class="fa fa-brands fa-youtube"></a><a
+                        target="_blank" href="https://www.linkedin.com/company/senai-sp"
+                        class="fa fa-brands fa-linkedin"></a>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <header class="header">
+        <div class="container">
+            <div class="row row-offcanvas row-offcanvas-left">
+                <div class="col-xs-8 col-sm-6 col-md-3 logo">
+                    <a target="_blank" href="http://www.sp.senai.br" target="_blank">
+                        <img id="ImgLogo" src="assets/senai.png" alt="Logo Senai">
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 barra-cat barra-cat-mob">
+                    <a target="_blank" href="https://mogidascruzes.sp.senai.br/"><span class="cat">
+                            Mogi das Cruzes - Centro</span>
+                        <span class="nome-cat">
+                            NAMI JAFET</span></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="page">
+        <div class="wrapper py-4">
+            <div class="container">
+                <h1>Bem vindo <span id="nomeDoAlunoText" class="fw-bold">aluno</span>, esse site foi desenvolvido para auxiliar no processo de reconhecimento de imagens do laboratório do Google Cloud</h1>
+                <h3 class="text-center"><a tagert="_blank" class="text-decoration-none" href="https://www.cloudskillsboost.google/focuses/22020?parent=catalog">"Identify Damaged Car Parts with Vertex AutoML Vision - GSP972"</a></h3>
+            </div>
+        </div>
+
+        <div class="container pb-4">
+            <p>Primeiramente é necessário fornecer o link da sua API:</p>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="apiLink" placeholder="https://automl-proxy-xfpm6c62ta-uc.a.run.app">
+                <label for="apiLink">AutoML API Link</label>
+            </div>
+            <button id="loadAPIButton"type="button" class="btn btn-outline-primary">Carregar Link API</button>
+        </div>
+
+        <div class="container pb-4">
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Escolha a imagem para validar</label>
+                <input class="form-control" type="file" id="formFile">
+              </div>
+            <button id="convertToBase64Button" type="button" class="btn btn-outline-primary">Converter imagem</button>
+        </div>
+
+        <div class="container pb-4">
+            <div class="form-floating mb-3">
+                <textarea class="form-control" placeholder="Código Base64 da Imagem" id="base64Code" style="height: 100px"></textarea>
+                <label for="base64Code">Base64 File</label>
+            </div>
+            <button id="sendToAPIButton"type="button" class="btn btn-outline-primary">Enviar imagem</button>
+        </div>
+    </div>
+
+    <footer class="stretch-item">
+        <div class="stretch-item">
+            <p>Desenvolvido por George Wurthmann</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Qual seu nome?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input id="nomeDoAlunoInput" class="form-control" type="text" placeholder="Digite seu nome"
+                        aria-label="default input example">
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-primary" onclick="alterarNome()" data-bs-dismiss="modal"
+                        value="Confirmar">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/custom.js"></script>
+    <script src="js/javascript.js"></script>
+</body>
+
+</html>
