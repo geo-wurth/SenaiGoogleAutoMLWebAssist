@@ -8,9 +8,11 @@ let data = {
    }
 };
 
+let responseAPI = "";
+
 let base64File = "";
 
-let apiURL = "https://automl-proxy-xfpm6c62ta-uc.a.run.app";
+let apiURL = "https://automl-proxy-mhs3osypeq-uc.a.run.app";
 
 document.getElementById('convertToBase64Button').addEventListener('click', function() {
    var files = document.getElementById('formFile').files;
@@ -59,18 +61,40 @@ document.getElementById('loadAPIButton').addEventListener('click', function() {
    button.classList.add("btn-secondary");
 });
 
-fetch('https://example.com/profile', {
-   method: 'POST',
-   headers: {
-      'Content-Type': 'application/json',
-   },
-   body: JSON.stringify(data),
-})
-  .then((response) => response.json())
-  .then((data) => {
-      console.log('Success:', data);
-  })
-  .catch((error) => {
-      console.error('Error:', error);
-  });
+document.getElementById('sendToAPIButton').addEventListener('click', function() {
+   var myHeaders = new Headers();
+   myHeaders.append("Content-Type", "application/json");
+   myHeaders.append('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
+   var raw = JSON.stringify({
+      "instances": [
+        {
+          "content": base64File
+        }
+      ],
+      "parameters": {
+        "confidenceThreshold": 0.5,
+        "maxPredictions": 5
+      }
+   });
+
+   var requestOptions = {
+      // mode: "no-cors",
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+   };
+
+   fetch(apiURL + "/v1", requestOptions)
+   .then(response => {
+      const promise = Promise.resolve(response.result);
+
+      promise.then((value) => {
+      alert("This is a " + value.predictions[0].displayNames[0]);
+      });   
+   })
+   .then(data => console.log(data))
+   .catch(error => console.log('error', error));
+});
 
